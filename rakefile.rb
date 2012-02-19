@@ -7,7 +7,7 @@ LIB_PATH = File.expand_path('lib')
 SOLUTION = "src/ServiceRunner.sln"
 COMPILE_TARGET = "Release"
 nuget = 'nuget'
-load "VERSION.txt"
+#load "VERSION.txt"
 
 task :default => ["build:all"]
 
@@ -16,6 +16,7 @@ namespace :build do
 	task :all => [:clean, :compile]
 
 	assemblyinfo :versioning do |asm|
+		BUILD_VERSION=File.read('VERSION.txt').strip;
   		asm.output_file = "src/CommonAssemblyInfo.cs"
   		asm.version = "#{BUILD_VERSION}"
 	end
