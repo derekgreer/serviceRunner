@@ -1,6 +1,6 @@
 @echo off
 set SCRIPT_DIR=%~dp0
-set MSBUILD_PATH=C:\Windows\Microsoft.NET\Framework\v4.0.30319\
+set MSBUILD_PATH=%windir%\Microsoft.NET\Framework\v4.0.30319\
 set /p VERSION=<VERSION.txt
 set COMMON_INFO=%SCRIPT_DIR%\src\CommonAssemblyInfo.cs
 
